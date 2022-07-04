@@ -1,0 +1,17 @@
+{% extends "pages/layout.html" %}
+
+{% block top-content %}
+<h1> Bathroom </h1>
+    {% if product_list %}
+    <ul>
+        {% for product in product_list %}
+        {% if product.room == 'bathroom' %}
+            
+        <li><a href="bathroom/">{{ product.name }}</a></li>
+        <img src="{{product.image}}" alt="{{product.name}}"> 
+    </ul>
+    {% else %}
+    <p>No polls are available.</p>
+    {% endif %}
+
+{% endfor %}

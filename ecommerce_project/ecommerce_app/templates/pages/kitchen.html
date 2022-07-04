@@ -1,0 +1,24 @@
+{% extends "pages/layout.html" %}
+
+{% block top-content %}
+<header class="header_kitchen"><a href="../">Haven. Get the Look!</a></header>
+
+{% endblock %}
+
+{% block bottom-content %}
+<marquee class="marquee_index">Don't miss the Independence Day Blowout Sale! Everything an additional 7.4% Off!</marquee>
+<!-- the password is admin -->
+<form id="search-form">
+    <label for="product">What are you looking for?</label>
+    <input value="" autofocus id="product">
+    <button type="submit">SUBMIT</button>
+</form>
+<div class="kitchen_products">
+    <h2>Get the Chef's kitchen you've always dreamed of!</h2>
+    <div class="pics">
+        <img src="/static/images/kitchen_faucet1.jpeg" width="200px">
+        <img src="/static/images/kitchen_paint1.png" width="200px">
+        <img src="/static/images/kitchen_sink1.jpeg" width="200px">
+    </div>
+</div>
+{% endblock %}

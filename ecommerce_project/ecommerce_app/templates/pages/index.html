@@ -1,0 +1,68 @@
+{% extends "pages/layout.html" %}
+{% block scripts %}
+<script src="/static/js/mains.js" defer></script>
+{% endblock %}
+
+{% block top-content %}
+{% endblock %}
+
+{% block bottom-content %}
+<marquee class="marquee_index">Don't miss the Independence Day Blowout Sale! Everything an additional 7.4% Off!</marquee>
+<!-- the password is admin -->
+
+<!-- <div class="list_of_pages">
+    <h2>Get the looks!</h2>
+    <ul>
+        <li><a href="kitchen/">Kitchen</a></li>
+        <li><a href="bedroom/">Bedroom</a></li>
+        <li><a href="living/">Living</a></li>
+        <li><a href="bathroom/">Bathroom</a></li>
+        <li><a href="products/">Products (for API example purposes)</a></li>
+    </ul>
+</div> -->
+<div>
+    <form id="search-form">
+        <label for="product">What are you looking for?</label>
+        <input value="phone" autofocus id="product">
+        <button type="submit">SUBMIT</button>
+    </form>
+</div>
+
+<!-- Category Cards Begin -->
+<div class="container-fluid cards_index">
+    <div class="card" style="width: 550px;">
+        <img class="card-img-top" src="static/images/cover_bedroom.webp" alt="Card image cap">
+        <div class="card-body">
+            <h3 class="card_header">Bedroom</h3>
+            <a class="card-text" href="bedroom/">Create your own neutral escape. Think live edge wood, crisp linen, natural textures, and fresh white flowers.</a>
+        </div>
+    </div>
+    
+    <div class="card" style="width: 550px;">
+        <img class="card-img-top" src="static/images/cover_kitchen.jpeg" alt="Card image cap">
+        <div class="card-body">
+            <h3 class="card_header">Kitchen</h3>
+            <a class="card-text" href="kitchen/">Make your kitchen a mood in itself. The functional simplicity of walnut butcher block meets naval blue cabinets and brass finishes.</a>
+        </div>
+    </div>
+
+    <div class="card" style="width: 550px;">
+        <img class="card-img-top" src="static/images/cover_bathroom.jpeg" alt="Card image cap">
+        <div class="card-body">
+            <h3 class="card_header">Bathroom</h3>
+            <a class="card-text" href="bathroom/">Bathe in paradise. Think natural simplicity meets art deco.</a>
+        </div>
+    </div>
+
+    <div class="card" style="width: 550px;">
+        <img class="card-img-top" src="static/images/cover_living.jpeg" alt="Card image cap">
+        <div class="card-body">
+            <h3 class="card_header">Kitchen</h3>
+            <a class="card-text" href="living/">Create your own mood lounge at home. Blue velvet meets Chocolate leather, wood, and brass accents to create your own haven of chic sophistication.</a>
+        </div>
+    </div>
+</div>
+<!-- Category Cards End -->
+
+
+{% endblock %}
