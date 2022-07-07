@@ -6,14 +6,15 @@ document.getElementById('search-form').addEventListener('submit', (event)=>{
     const searchInput = document.getElementById('product')
 console.log(searchInput)
     // send a GET request to /products on our server, passing searchInput.value as data.
-    axios.get('/search', {params:{query: searchInput.value}})
-    console.log(searchInput.value)
+    axios.get('/products/', {params:{query: searchInput.value}})
+    // console.log(searchInput.value)
 
     // handle the response from the server
     .then((response)=>{
         console.log('response?')
         console.log(response)
 
+        
         newImage = document.createElement('img')
         newImage.src = response.data.url
 

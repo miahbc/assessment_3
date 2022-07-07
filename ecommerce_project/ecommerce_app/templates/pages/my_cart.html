@@ -11,9 +11,10 @@
                     <img class="category_pic" src="{{product.image}}" alt="{{product.name}}">
                     <div class="card-body">
                         <h3 class="card_header">{{product.name}}</h3>
-                        <p class="card-text">Create your own neutral escape. Think live edge wood, crisp linen, natural textures, and fresh white flowers.</p>
+                        <p class="card-text">{{product.description}}</p>
+                        <p>{{product.count}}</p>
                     </div>
-                    <button type="button" class="btn btn-light btn_addtocart">Add to Cart</button>
+                    <button type="button" class="btn btn-light btn_addtocart">Remove from Cart</button>
                 </div>
             {% endfor %}
         {% else %}
@@ -23,6 +24,6 @@
 </div>
 
 <div>
-    <h2>Cart Total: $ {{cart_total_str}}</h2>
+    <h2 font-size=50px style="color:whitesmoke"> Cart Total: ${{cart_total}}</h2>
 </div>
 {% endblock %}

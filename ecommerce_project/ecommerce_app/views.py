@@ -18,87 +18,99 @@ print(os.environ['secretkey'])
 product_list = [
     { 'name': 'blue sofa',
         'room': 'living',
-        'price':'1499',
+        'price':1499,
         'color': ['blue'],
         'image': '../static/images/living_sofabl1.webp',
         'tags': ['sofa','couch','loveseat','blue','velvet','wood','living','living room','furniture',],
+        'count': 1,
     },
     { 'name': 'brown sofa',
         'room': 'living',
-        'price':'1499',
+        'price':1499,
         'color': ['brown'],
         'image': '../static/images/living_sofabr1.webp',
         'tags': ['sofa','couch','loveseat','brown','leather','wood','living','living room','furniture',],
+        'count': 1,
     },
     { 'name': 'lamp',
         'room': 'living',
-        'price':'199',
+        'price':199,
         'color': ['gold, white'],
         'image': '../static/images/living_lamp1.webp',
         'tags': ['lamp','floor','floor lamp','gold','brass','white','light','lighting','fixture',],
+        'count': 1,
     },
         { 'name': 'headboard',
         'room': 'bedroom',
-        'price':'299',
+        'price':299,
         'color': ['brown'],
         'image': '../static/images/bedroom_headboard1.jpeg',
         'tags': ['headboard','wood','live edge','queen','king','rustic','industrial','bed'],
+        'count': 1,
     },
         { 'name': 'doors',
         'room': 'bedroom',
-        'price':'399',
+        'price':399,
         'color': ['black'],
         'image': '../static/images/bedroom_doors1.webp',
         'tags': ['mirror','wardrobe','metal','black','sliding','barndoor','barn','door','panel',],
+        'count': 1,
     },
         { 'name': 'desk',
         'room': 'bedroom',
-        'price':'99',
+        'price':99,
         'color': ['brown', 'black'],
         'image': '../static/images/bedroom_desk1.jpeg',
         'tags': ['desk','wood','metal','brown','black','dropleaf','folding','collapsible','industrial',],
+         'count': 1,
     },
         { 'name': 'faucet1',
         'room': 'bathroom',
-        'price':'299',
+        'price':299,
         'color': ['black'],
         'image': '../static/images/bathroom_faucet1.jpeg',
         'tags': ['bathroom','faucet','shelf','unique','wall','modern','sink',],
+        'count': 1,
     },
         { 'name': 'tile',
         'room': 'bathroom',
-        'price':'299',
+        'price':299,
         'color': ['white', 'black'],
         'image': '../static/images/bathroom_tile1.jpeg',
         'tags': ['tile','art deco','black','white','stripes','hexagon','modern','bathroom','kitchen',],
+        'count': 1,
     },
         { 'name': 'sink',
         'room': 'bathroom',
-        'price':'149',
+        'price':149,
         'color': ['white'],
         'image': '../static/images/bathroom_sink1.jpeg',
         'tags': ['white','art deco', 'unique','sink','vanity','porcelain',],
+        'count': 1,
     },
         { 'name': 'faucet2',
         'room': 'kitchen',
-        'price':'299',
+        'price':299,
         'color': ['black', 'gold'],
         'image': '../static/images/kitchen_faucet1.jpeg',
         'tags': ['kitchen','faucet','black','gold','brass','flexible','multi-stream','coil',],
+        'count': 1,
     },
         { 'name': 'paint',
         'room': 'kitchen',
-        'price':'99',
+        'price':99,
         'color': ['blue'],
         'image': '../static/images/kitchen_paint1.png',
         'tags': ['blue','paint','cabinet','cabinets','kitchen',],
+        'count': 1,
     },
         { 'name': 'sink2',
         'room': 'kitchen',
-        'price':'299',
+        'price': 299,
         'color': ['black'],
         'image': '../static/images/kitchen_sink1.jpeg',
         'tags': ['kitchen','sink','stainless','steel','stainless steel','graphite','black','undermount','farmhouse',],
+        'count': 1,
     },
 ]
 
@@ -106,22 +118,37 @@ product_list = [
 shopping_cart = [
     { 'name': 'blue sofa',
         'room': 'living',
-        'price':'1499',
+        'price':1499,
         'color': ['blue'],
         'image': '../static/images/living_sofabl1.webp',
         'tags': ['sofa','couch','loveseat','blue','velvet','wood','living','living room','furniture',],
+        'count': 1,
     },
     { 'name': 'sink',
         'room': 'bathroom',
-        'price':'149',
+        'price':149,
         'color': ['white'],
         'image': '../static/images/bathroom_sink1.jpeg',
         'tags': ['white','art deco', 'unique','sink','vanity','porcelain',],
+        'count': 1,
     },
 ]
 
-cart_total = 15
-cart_total_str = str(cart_total)
+def cart_sum(dict):
+    sum = 0
+    for item in dict:  
+        sum += item['price']
+        return sum
+
+cart_total = cart_sum(shopping_cart)
+
+
+    
+    # if item['name'] in cart == 'false':
+    #     cart.append(item)
+    # else:
+    #     item['count'] += 1
+
 
 
 
@@ -179,3 +206,8 @@ def my_cart(request):
 def about_us(request):
     print(HttpResponse("About Us: Our Mission to Help You Get the Look!"))
     return render(request, 'pages/about_us.html')
+
+# def addtocart {
+#     if request.method == 'POST':
+        
+# }

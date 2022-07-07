@@ -15,9 +15,9 @@
 
 <div>
     <form id="search-form">
-        <label for="product">What are you looking for?</label>
-        <input autofocus id="product">
-        <button type="submit">SUBMIT</button>
+        <input autofocus value="" id="product" placeholder="What are you looking for?">
+        <button type="submit" method="POST">SUBMIT</button>
+        <p style=" color: white" >{{form.product.value}}</p>
     </form>
 </div>
 <div>
@@ -25,9 +25,9 @@
     <div class="container-sm product">
         {% if product_list %}
             {% for product in product_list %}
-                {% if 'wood' in product.tags %}
+                {% if 'blue' in product.tags %}
                     <div class="card search_card">
-                        <p><a href="http://127.0.0.1:8000/bedroom/">{{product.name}}</a></p>
+                        <h2 style="color: black"><a href="http://127.0.0.1:8000/{{product.room}}/">{{product.name}}     $ {{product.price}}</a></h2>
                         <img class="category_pic" src="{{product.image}}" alt="{{product.name}}">
                         <div class="search_card_body">
                             <h3 class="card_header">{{product.name}}</h3>
