@@ -1,1 +1,28 @@
 {% extends "pages/layout.html" %}
+
+{% block top-content %}
+<div>
+    <h1 class="room_header" style="color:rgb(222, 219, 219)"> My Shopping Cart </h1>
+    <div class="container-fluid shopping_cart">
+        {% if shopping_cart %}
+            {% for product in shopping_cart %}
+                <div class="card card_category">
+                    <!-- <p><a href="http://127.0.0.1:8000/bedroom/">{{product.name}}</a></p> -->
+                    <img class="category_pic" src="{{product.image}}" alt="{{product.name}}">
+                    <div class="card-body">
+                        <h3 class="card_header">{{product.name}}</h3>
+                        <p class="card-text">Create your own neutral escape. Think live edge wood, crisp linen, natural textures, and fresh white flowers.</p>
+                    </div>
+                    <button type="button" class="btn btn-light btn_addtocart">Add to Cart</button>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No products are available.</p>
+        {% endif %}
+    </div>
+</div>
+
+<div>
+    <h2>Cart Total: $ {{cart_total_str}}</h2>
+</div>
+{% endblock %}

@@ -9,4 +9,6 @@ urlpatterns = [
     path('bedroom/', views.bedroom),
     path('search/', views.search),
     path('products/', views.products),
+    path('my_cart/', views.my_cart),
+    path('about_us/', views.about_us),
 ]

@@ -1,5 +1,5 @@
 body {
-    background-color: whitesmoke;
+    background-image: url('../static/images/background_pic.jpeg');
 }
 
 .navbar {
@@ -38,7 +38,7 @@ ul {
 }
 
 .card {
-    margin-top: 100px;
+    margin-top: 300px;
     margin-left: 50px;
     margin-right: 50px;
     margin-bottom: 300px;
@@ -53,7 +53,7 @@ ul {
 
 .card-img-top {
     width: 538.2px;
-    flex:auto ;
+    flex: auto ;
 }
 
 .container-fluid {
@@ -73,7 +73,7 @@ ul {
 }
 
 .btn-outline-success {
-    color:rgb(2, 44, 2)
+    color:rgb(2, 44, 2);
 }
 
 .header_search {
@@ -83,3 +83,36 @@ ul {
 .search_label {
     color: whitesmoke;
 }
+
+
+.category {
+    display: flexbox;
+}
+
+.cards_category {
+    width: 501px;
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 300px;
+    border-width: 5pt;
+    border-color: black;
+    /* border-radius: 50%; */
+}
+
+.category_pic {
+    width: 100%;
+}
+
+.search_card {
+    width: 550px;
+}
+
+.card_category {
+    width: 500px;
+}
+
+.btn {
+    font-weight: bolder;
+}
+

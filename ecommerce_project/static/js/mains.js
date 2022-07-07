@@ -1,11 +1,13 @@
 
+console.log('test test')
 document.getElementById('search-form').addEventListener('submit', (event)=>{
     event.preventDefault()
 
     const searchInput = document.getElementById('product')
-
+console.log(searchInput)
     // send a GET request to /products on our server, passing searchInput.value as data.
-    axios.get('/products', {params:{query: searchInput.value}})
+    axios.get('/search', {params:{query: searchInput.value}})
+    console.log(searchInput.value)
 
     // handle the response from the server
     .then((response)=>{

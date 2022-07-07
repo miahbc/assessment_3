@@ -1,24 +1,26 @@
 {% extends "pages/layout.html" %}
 
 {% block top-content %}
-<header class="header_kitchen"><a href="../">Haven. Get the Look!</a></header>
-
-{% endblock %}
-
-{% block bottom-content %}
-<marquee class="marquee_index">Don't miss the Independence Day Blowout Sale! Everything an additional 7.4% Off!</marquee>
-<!-- the password is admin -->
-<form id="search-form">
-    <label for="product">What are you looking for?</label>
-    <input value="" autofocus id="product">
-    <button type="submit">SUBMIT</button>
-</form>
-<div class="kitchen_products">
-    <h2>Get the Chef's kitchen you've always dreamed of!</h2>
-    <div class="pics">
-        <img src="/static/images/kitchen_faucet1.jpeg" width="200px">
-        <img src="/static/images/kitchen_paint1.png" width="200px">
-        <img src="/static/images/kitchen_sink1.jpeg" width="200px">
+<div>
+    <h1 class="room_header" style="color:rgb(222, 219, 219)" > Kitchen </h1>
+    <div class="container-fluid products">
+        {% if product_list %}
+            {% for product in product_list %}
+                {% if product.room == 'kitchen' %}
+                    <div class="card card_category">
+                        <!-- <p><a href="http://127.0.0.1:8000/bedroom/">{{product.name}}</a></p> -->
+                        <img class="category_pic" style="width: 100%" src="{{product.image}}" alt="{{product.name}}">
+                        <div class="card-body">
+                            <h3 class="card_header" style="color:black">{{product.name}}</h3>
+                            <a class="card-text" href="http://127.0.0.1:8000/kitchen/">Create your own neutral escape. Think live edge wood, crisp linen, natural textures, and fresh white flowers.</a>
+                        </div>
+                        <button type="button" class="btn btn-light btn_addtocart">Add to Cart</button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <p>No products are available.</p>
+        {% endif %}
     </div>
-</div>
+</div>      
 {% endblock %}

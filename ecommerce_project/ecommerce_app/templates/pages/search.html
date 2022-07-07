@@ -11,12 +11,35 @@
 {% block bottom-content %}
 <marquee class="marquee_index">Don't miss the Independence Day Blowout Sale! Everything an additional 7.4% Off!</marquee>
 
-<h1 class="header_search">Search for the Look!</h1>
+<h1 class="header_search" style="color:rgb(222, 219, 219)">Search for the Look!</h1>
 
+<div>
+    <form id="search-form">
+        <label for="product">What are you looking for?</label>
+        <input autofocus id="product">
+        <button type="submit">SUBMIT</button>
+    </form>
+</div>
+<div>
+    <h1 class="room_header" style="color:rgb(222, 219, 219)" > Search Results </h1>
+    <div class="container-sm product">
+        {% if product_list %}
+            {% for product in product_list %}
+                {% if 'wood' in product.tags %}
+                    <div class="card search_card">
+                        <p><a href="http://127.0.0.1:8000/bedroom/">{{product.name}}</a></p>
+                        <img class="category_pic" src="{{product.image}}" alt="{{product.name}}">
+                        <div class="search_card_body">
+                            <h3 class="card_header">{{product.name}}</h3>
+                            <a class="card-text" href="http://127.0.0.1:8000/bedroom/">Sample Text</a>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        <!-- {% else %}
+            <p>No products are available.</p> -->
+        {% endif %}
+    </div>
+</div>      
 
-<form id="search-form">
-    <label for="product">What are you looking for?</label>
-    <input value="phone" autofocus id="product">
-    <button type="submit">SUBMIT</button>
-</form>
 {% endblock %}
